@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To do list </title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+    <div class="box">
+        <h1>Your To Do List</h1>
+    </div>
+     <div class="box">
+   <form action="/edit/<%= item._id %>" method="post">
+    <input type="text" name="updateItems" value="<%= item.name %>" required>
+    <input type="hidden" name="itemId" value="<%= item._id %>">
+    <select name="priority" required>
+            <option value="High" <%= item.priority === 'High' ? 'selected' : '' %>>High</option>
+            <option value="Mid" <%= item.priority === 'Mid' ? 'selected' : '' %>>Mid</option>
+            <option value="Low" <%= item.priority === 'Low' ? 'selected' : '' %>>Low</option>
+        </select>
+        <button class="update" type="submit">Update</button>
+</form>
+  </div>
+</body>
+
+</html>
