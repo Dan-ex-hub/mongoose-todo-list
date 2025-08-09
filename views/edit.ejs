@@ -16,8 +16,8 @@
  <form action="/edit/<%= item._id %>?_method=PUT" method="post">
     <input type="text" name="updateitems" value="<%= item.name %>" required>
     <select name="priority" required>
+        <option value="Urgent" <%= item.priority === 'Urgent' ? 'selected' : '' %>>Urgent</option>
         <option value="High" <%= item.priority === 'High' ? 'selected' : '' %>>High</option>
-        <option value="Mid" <%= item.priority === 'Mid' ? 'selected' : '' %>>Mid</option>
         <option value="Low" <%= item.priority === 'Low' ? 'selected' : '' %>>Low</option>
     </select>
     <button class="update" type="submit">Update</button>

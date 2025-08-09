@@ -17,8 +17,8 @@
         <label for="priorityfilter">Filter by Priority:</label>
         <select name="priority" id="priorityfilter" onchange="this.form.submit()">
             <option value="" <%= priority === '' ? 'selected' : '' %>>All</option>
+            <option value="Urgent" <%= priority === 'Urgent' ? 'selected' : '' %>>Urgent</option>
             <option value="High" <%= priority === 'High' ? 'selected' : '' %>>High</option>
-            <option value="Mid" <%= priority === 'Mid' ? 'selected' : '' %>>Mid</option>
             <option value="Low" <%= priority === 'Low' ? 'selected' : '' %>>Low</option>
         </select>
     </form>
@@ -26,9 +26,9 @@
      <form action="/" method="post" class="form-input">
         <input type="text" name="ele1" placeholder="Add a new task" required>
         <select name="priority" required>
+            <option value="Urgent">Urgent</option>
             <option value="High">High</option>
-            <option value="Mid" selected>Mid</option>
-            <option value="Low">Low</option>
+            <option value="Low" selected>Low</option>
         </select>
         <button class="submit" type="submit">+</button>
     </form>

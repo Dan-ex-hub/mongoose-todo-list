@@ -16,7 +16,7 @@ const trySchema = new mongoose.Schema({
     name: String,
     priority: {
         type: String,
-        enum: ["High", "Mid", "Low"],
+        enum: ["Urgent", "High", "Low"],
     }
 });
 const item = mongoose.model("tasks", trySchema);
