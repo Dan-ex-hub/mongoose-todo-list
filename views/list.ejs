@@ -14,14 +14,15 @@
     </div>
  <div class="box">
     <form method="get" action="/" class="form-filter">
-        <label for="priorityFilter">Filter by Priority:</label>
-        <select name="priority" id="priorityFilter" onchange="this.form.submit()">
-            <option value="">All</option>
-            <option value="High" <%= (typeof priority !== 'undefined' && priority === 'High') ? 'selected' : '' %>>High</option>
-            <option value="Mid" <%= (typeof priority !== 'undefined' && priority === 'Mid') ? 'selected' : '' %>>Mid</option>
-            <option value="Low" <%= (typeof priority !== 'undefined' && priority === 'Low') ? 'selected' : '' %>>Low</option>
+        <label for="priorityfilter">Filter by Priority:</label>
+        <select name="priority" id="priorityfilter" onchange="this.form.submit()">
+            <option value="" <%= priority === '' ? 'selected' : '' %>>All</option>
+            <option value="High" <%= priority === 'High' ? 'selected' : '' %>>High</option>
+            <option value="Mid" <%= priority === 'Mid' ? 'selected' : '' %>>Mid</option>
+            <option value="Low" <%= priority === 'Low' ? 'selected' : '' %>>Low</option>
         </select>
     </form>
+    
      <form action="/" method="post" class="form-input">
         <input type="text" name="ele1" placeholder="Add a new task" required>
         <select name="priority" required>
@@ -31,22 +32,19 @@
         </select>
         <button class="submit" type="submit">+</button>
     </form>
+
     <% dayej.forEach(function(items) { %>
-        <form action="/delete" method="post">
-            <div class="item">
-                <input type="checkbox" name="checkedbox" onchange="this.form.submit()" value="<%= items._id %>">
-                <p>
-                    <%= items.name %> 
-                    <span>
-                        [<%= items.priority %>]
-                    </span>
-                </p>
-                <a href="/edit/<%= items._id %>">
-                    <ion-icon name="create-outline"></ion-icon>
-                </a>
-            </div>
-        </form>
+        <form action="/delete/<%= items._id %>?_method=DELETE" method="post">
+    <div class="item">
+        <input type="checkbox" onchange="this.form.submit()">
+        <p><%= items.name %> <span>[<%= items.priority %>]</span></p>
+        <a href="/edit/<%= items._id %>">
+            <ion-icon name="create-outline"></ion-icon>
+        </a>
+    </div>
+</form>
     <% }) %>
+
 </div>
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>

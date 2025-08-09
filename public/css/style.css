@@ -1,8 +1,10 @@
 html{
+    font-family: 'helvetica neue';
+}
+body {
     background-color:  #e4e9fd;
     background-image: linear-gradient(45deg, #a683e3 50%, #e4e9fd 50%);
-
-    font-family: 'helvetica neue';
+    min-height: 100vh;
 }
 h1{
     color:#555;
@@ -14,7 +16,7 @@ h1{
     background: white;
     border-radius:5px;
     box-shadow: 5px 5px 15px -5px rgba(0, 0, 0, 0.3);
-    text-align: center; /* Center content */
+    text-align: center;
 }
 #heading{
     background-color: #a683e3;
@@ -36,8 +38,6 @@ input:checked+p{
     text-decoration-color: #555;
 }
 
-/* input[type="checkbox"]{ }*/
-
 p{
     margin:0;
     padding: 20px;
@@ -50,7 +50,7 @@ p{
 }
 form{
     text-align:center;
-    margin-left: 0; /* Remove left margin */
+    margin-left: 0; 
     display: inline-block;
 }
  button.submit{
