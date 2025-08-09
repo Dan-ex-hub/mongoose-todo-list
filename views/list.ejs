@@ -36,7 +36,9 @@
     <% dayej.forEach(function(items) { %>
         <form action="/delete/<%= items._id %>?_method=DELETE" method="post">
     <div class="item">
-        <input type="checkbox" onchange="this.form.submit()">
+        <button class="delete" type="submit">
+            <ion-icon name="trash-outline"></ion-icon>
+        </button>
         <p><%= items.name %> <span>[<%= items.priority %>]</span></p>
         <a href="/edit/<%= items._id %>">
             <ion-icon name="create-outline"></ion-icon>

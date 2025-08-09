@@ -42,7 +42,7 @@ app.post("/", async function (req, res) {
     });
     try {
         await todo.save();
-        res.redirect("/");
+         res.redirect("/");
     } catch (err) {
         res.send("Error occurred while creating item. " + err);
     }
